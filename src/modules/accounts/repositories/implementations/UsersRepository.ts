@@ -34,6 +34,14 @@ class UsersRepository implements IUsersRepository {
 
     return user;
   }
+
+  findById(user_id: string): Promise<User> {
+    const user = this.repository.findOne({
+      id: user_id,
+    });
+
+    return user;
+  }
 }
 
 export { UsersRepository };
